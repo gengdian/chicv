@@ -36,6 +36,7 @@ class TestCase(unittest.TestCase):
 
     @ddt.data(*read_excel())
     @ddt.unpack
+
     def test_login_01(self, a, b, c):
         driver = webdriver.Chrome()
         driver.get('http://localhost/')
@@ -46,10 +47,6 @@ class TestCase(unittest.TestCase):
         denglu = driver.find_element(By.XPATH, '//div[@align="center"]/b').text
         if denglu == '登录成功!':
             self.assertEqual(denglu, "登录成功!")
-            self.assertNotEqual(denglu, "登录成功!")
-            self.assertIn(denglu, "登录成功!")
-            self.assertTrue(denglu, "登录成功!")
-            self.assertFalse(denglu, "登录成功!")
         elif denglu == '您的用户名或密码有误!':
             self.assertEqual(denglu, '您的用户名或密码有误!')
         else:
