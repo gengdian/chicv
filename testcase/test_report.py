@@ -1,6 +1,7 @@
 import time  # 导入时间模块 方便创建文件时创建不同文件
 import unittest
 import HTMLTestRunner  # 生成HTML文件模块
+from base.SendEmail import Send_Email
 
 dir = "D:\\py_project\\chicv\\testcase"  # 获取当前文件路径
 
@@ -16,3 +17,7 @@ if __name__ == '__main__':
 
         runner.run(suite)  # 运行
     f.close()
+
+    Send_Email().send_emails()
+
+

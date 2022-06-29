@@ -1,7 +1,23 @@
 import time
-
+import openpyxl
 from selenium.webdriver.common.by import By
 from base.base_page import BasePage
+
+
+def read_excel():
+    # 打开Excel表格
+    data1 = openpyxl.load_workbook(r'D:\py_project\chicv\data\login_data.xlsx')
+    # 获取Excel表格里面的下标login
+    table = data1['login']
+    # 循环出Excel表格里面的数据
+    a = []
+    for rows in range(2, table.max_row + 1):
+        b = []
+        for cols in range(2, table.max_column + 1):
+            b.append(table.cell(rows, cols).value)
+        a.append(b)
+    return a
+
 
 
 class LoginPage(BasePage):

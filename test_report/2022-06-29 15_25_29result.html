@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>test teport</h1>
-<p class='attribute'><strong>Start Time:</strong> 2022-06-29 13:38:04</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:10.035170</p>
-<p class='attribute'><strong>Status:</strong> Pass 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2022-06-29 15:25:29</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00</p>
+<p class='attribute'><strong>Status:</strong> Error 1</p>
 
 <p class='description'>test case result</p>
 </div>
@@ -221,34 +221,42 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
-    <td>test_case.TestCase</td>
-    <td>1</td>
+<tr class='errorClass'>
+    <td>unittest.loader._FailedTest</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
+    <td>1</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login_01</div></td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_case</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
 
-    <div id='div_pt1.1' class="popup_window">
+    <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1: 
-用例开始执行
+ft1.1: ImportError: Failed to import test module: test_case
+Traceback (most recent call last):
+  File "C:\Users\xiao\AppData\Local\Programs\Python\Python39\lib\unittest\loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\xiao\AppData\Local\Programs\Python\Python39\lib\unittest\loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "D:\py_project\chicv\testcase\test_case.py", line 3, in &lt;module&gt;
+    from pageobject.login_page import LoginPage
+  File "D:\py_project\chicv\pageobject\login_page.py", line 23, in &lt;module&gt;
+    @ddt.ddt
+AttributeError: 'function' object has no attribute 'ddt'
 
-用例执行结束
 
 
         </pre>
@@ -261,9 +269,9 @@ pt1.1:
 <tr id='total_row'>
     <td>Total</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
