@@ -21,7 +21,3 @@ class TestCase(unittest.TestCase):
         ip.login_ecshop(a, b, c)
         time.sleep(3)
         self.assertEqual(ip.get_except_result(), "退出")
-
-    def test_login_02(self):
-        a =1
-        print(a)

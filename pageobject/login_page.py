@@ -34,6 +34,7 @@ class LoginPage(BasePage):
         self.send_keys(LoginPage.Authentication_loc, loginauth)
         self.click(LoginPage.submit_loc)
         time.sleep(3)
+        self.quit()
 
     # 断言
     def get_except_result(self):

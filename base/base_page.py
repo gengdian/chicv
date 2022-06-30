@@ -41,3 +41,6 @@ class BasePage:
     # 封装获取定位元素的值
     def get_value(self, loc):
         return self.locator_element(loc).text
+
+    def quit(self):
+        self.quit()
