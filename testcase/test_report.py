@@ -1,6 +1,6 @@
 import os
 import sys
-
+# 获取当前目录
 basedir = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(basedir)[0]
 sys.path.append(rootPath)

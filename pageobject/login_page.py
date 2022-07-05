@@ -31,6 +31,7 @@ class LoginPage(BasePage):
         self.send_keys(LoginPage.password_loc, password)
         self.click(LoginPage.submit_loc)
         time.sleep(3)
+        self.driver.get_screenshot_as_base64()
 
     # 断言
     def get_except_result(self):
