@@ -22,22 +22,17 @@ def read_excel():
 
 class LoginPage(BasePage):
     # 页面的元素
-    username_loc = (By.NAME, "username")
-    password_loc = (By.NAME, "password")
-    Authentication_loc = (By.NAME, "loginauth")
-    submit_loc = (By.NAME, "imageField")
-    tuichu_loc = (By.LINK_TEXT, '退出')
+    username_loc = (By.XPATH, '//div[@class="inp-item"]//input[@name="email"]')
+    password_loc = (By.XPATH, '//div[@class="inp-item inp-password"]//input[@name="password"]')
+    submit_loc = (By.XPATH, '//li[@class="login-item item"]//button[@type="submit"]')
 
     def login_ecshop(self, username='admin', password='admin', loginauth='admin'):
         self.send_keys(LoginPage.username_loc, username)
         self.send_keys(LoginPage.password_loc, password)
-        self.send_keys(LoginPage.Authentication_loc, loginauth)
         self.click(LoginPage.submit_loc)
         time.sleep(3)
-        self.quit()
 
     # 断言
     def get_except_result(self):
         time.sleep(2)
-        self.get_value(LoginPage.tuichu_loc)
-        return self.get_value(LoginPage.tuichu_loc)
+        return self.title()

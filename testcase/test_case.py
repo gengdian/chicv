@@ -20,4 +20,9 @@ class TestCase(unittest.TestCase):
         ip = LoginPage()
         ip.login_ecshop(a, b, c)
         time.sleep(3)
-        self.assertEqual(ip.get_except_result(), "退出")
+        if ip.get_except_result() == "Casual Womens Clothing Store Online, Womens Dresses & Tops | noracora":
+            self.assertEqual(ip.get_except_result(), "Casual Womens Clothing Store Online, Womens Dresses & Tops | noracora")
+        else:
+            self.assertEqual(ip.get_except_result(), "Login |noracora")
+        ip.quit()
+

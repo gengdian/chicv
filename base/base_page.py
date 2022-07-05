@@ -11,7 +11,7 @@ class BasePage:
         global driver
         self.driver = webdriver.Chrome()
         driver = self.driver
-        self.driver.get("http://localhost/e/admin/index.php")
+        self.driver.get("https://noracora.com/account/login")
 
     #  封装定位元素并返回， 注意参数loc解包
     def locator_element(self, loc):
@@ -43,4 +43,7 @@ class BasePage:
         return self.locator_element(loc).text
 
     def quit(self):
-        self.quit()
+        driver.quit()
+
+    def title(self):
+        return driver.title
